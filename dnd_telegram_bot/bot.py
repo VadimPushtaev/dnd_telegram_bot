@@ -48,6 +48,8 @@ async def roll_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
     dice_parser = DiceParser()
     result = dice_parser.parse(to_roll)
 
+    logger.info("Rolled '%s', got [%s] `%s`", to_roll, result.string, result.value)
+
     await update.message.reply_text(str(result.value))
 
 
