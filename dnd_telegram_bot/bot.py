@@ -44,11 +44,11 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
 
 async def roll_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    if "parser" not in context.user_data:
+    if "parser" not in context.chat_data:
         context.chat_data["parser"] = DiceParser()
 
     to_roll = ''.join(context.args)
-    dice_parser = context.user_data["parser"]
+    dice_parser = context.chat_data["parser"]
     result = dice_parser.parse(to_roll)
 
     logger.info("Rolled '%s', got [%s] `%s`", to_roll, result.string, result.value)
