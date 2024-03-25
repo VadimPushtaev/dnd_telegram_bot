@@ -44,7 +44,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
 
 async def roll_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    to_roll = context.args[0]
+    to_roll = ''.join(context.args)
     dice_parser = DiceParser()
     result = dice_parser.parse(to_roll)
 
