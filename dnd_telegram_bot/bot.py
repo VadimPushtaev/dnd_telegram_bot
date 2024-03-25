@@ -45,7 +45,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
 async def roll_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     if "parser" not in context.user_data:
-        context.user_data["parser"] = DiceParser()
+        context.chat_data["parser"] = DiceParser()
 
     to_roll = ''.join(context.args)
     dice_parser = context.user_data["parser"]
